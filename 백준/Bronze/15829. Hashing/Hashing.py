@@ -33,4 +33,4 @@ result = 0
 for i in range(l):
     result += alpha.get(s[i]) * 31 ** i
 
-print(result)
+print(result % 1234567891)

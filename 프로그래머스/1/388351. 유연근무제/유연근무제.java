@@ -4,11 +4,6 @@ import java.util.*;
 class Solution {
     public int solution(int[] schedules, int[][] timelogs, int startday) {
         int answer = schedules.length;
-        List<int[]> list = new ArrayList<>();
-        for (int[] d : timelogs) {
-            list.add(d);
-        }
-
         for (int i = 0; i < schedules.length; i++) {
             int hour = schedules[i] / 100;
             int minute = schedules[i] % 100 + 10;

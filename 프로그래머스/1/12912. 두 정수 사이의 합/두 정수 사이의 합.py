@@ -3,9 +3,7 @@ def solution(a, b):
     if a == b:
         return a
     if a > b:
-        tmp = a
-        a = b
-        b = tmp
+        a,b = b,a
     for i in range(a, b+1):
         answer += i
     return answer

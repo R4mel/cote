@@ -1,10 +1,10 @@
 # [level 1] 콜라 문제 - 132267 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132267) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/132267?language=python3) 
 
 ### 성능 요약
 
-메모리: 74.5 MB, 시간: 0.06 ms
+메모리: 11.5 MB, 시간: 0.19 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 07월 04일 15:49:45
+2026년 08월 13일 20:49:00
 
 ### 문제 설명
 

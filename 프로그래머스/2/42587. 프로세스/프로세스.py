@@ -1,18 +1,23 @@
 from collections import deque
 def solution(priorities, location):
-    queue = deque([(i, p) for i, p in enumerate(priorities)])
-    answer = 0
-    
+    queue = deque(enumerate(priorities))
+    # [A, B, C, D]
+    # [2, 1, 3, 2]
+    # [C, D, A, B]
+    count = 0
     while queue:
-        now = queue.popleft()
         hasHigher = False
-        for idx, pri in queue:
-            if pri > now[1]:
+        idx, now_priority = queue.popleft()
+        
+        for _, priority in queue:
+            if now_priority < priority:
                 hasHigher = True
                 break
         if hasHigher:
-            queue.append(now)
+            queue.append((idx, now_priority))
         else:
-            answer += 1
-            if now[0] == location:
-                return answer
+            count += 1
+            if idx == location:
+                return count
+        
+        

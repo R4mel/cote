@@ -1,10 +1,10 @@
 def solution(brown, yellow):
-    answer = []
-    total = brown + yellow # width * height
-    # yellow = (width - 2) * (height - 2)
-    for height in range(3, total + 1):
-        if total % height == 0:
-            width = total // height
-            if (width - 2) * (height - 2) == yellow:
-                return [width, height]
-    return answer
+    total = brown + yellow
+    # total = 12
+    # brown = 10
+    # yellow = 2 -> (width-2) * (height-2)
+    # width = 4 height = 3
+    for h in range(3, total):
+        for w in range(h, total // h+1):
+            if (w-2) * (h-2) == yellow:
+                return [w, h]

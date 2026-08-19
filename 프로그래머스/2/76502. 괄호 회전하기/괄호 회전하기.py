@@ -1,29 +1,20 @@
-from collections import deque
 def solution(s):
+    answer = 0
     def isGood(s):
         stack = []
+        pair = {')': '(', '}': '{', ']': '['}
         
         for ch in s:
-            if ch in '([{':
+            if ch in '({[':
                 stack.append(ch)
-            elif ch in ')]}':
-                if not stack:
+            elif ch in pair: # key check
+                if not stack or stack[-1] != pair[ch]:
                     return False
-                if ch == ')' and stack[-1] != '(':
-                    return False
-                if ch == ']' and stack[-1] != '[':
-                    return False
-                if ch == '}' and stack[-1] != '{':
-                    return False
-                
                 stack.pop()
-        return len(stack) == 0
-    
-    answer = 0
-    s = deque(s)
-    
-    for _ in range(len(s)):
-        if isGood(''.join(s)):
+        return len(stack) == 0            
+            
+    for i in range(len(s)):
+        rotate = s[i:] + s[:i]
+        if isGood(rotate):
             answer += 1
-        s.rotate(-1)
     return answer

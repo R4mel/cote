@@ -1,11 +1,7 @@
 def solution(sizes):
-    w = []
+    w = [] # 더 큰거
     h = []
-    for i in range(len(sizes)):
-        if sizes[i][0] >= sizes[i][1]:
-            w.append(sizes[i][0])
-            h.append(sizes[i][1])
-        else:
-            w.append(sizes[i][1])
-            h.append(sizes[i][0])
+    for i,j in sizes:
+        w.append(max(i, j))
+        h.append(min(i, j))
     return max(w) * max(h)

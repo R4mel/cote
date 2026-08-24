@@ -1,6 +1,6 @@
 def solution(array, commands):
-    res = []
+    answer = []
     for i in range(len(commands)):
-        tmp = array[commands[i][0] - 1:commands[i][1]]
-        res.append(sorted(tmp)[commands[i][2] - 1])
-    return res
+        tmp=array[commands[i][0]-1:commands[i][1]]
+        answer.append(sorted(tmp)[commands[i][2]-1])
+    return answer

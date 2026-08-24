@@ -10,8 +10,7 @@ def solution(k, dungeons):
                 visited[i] = True
                 
                 dfs(k-dungeons[i][1], count+1, visited)
-                
                 visited[i] = False
-    dfs(k, 0, visited)
-    
+                
+    dfs(k,0,visited)
     return answer

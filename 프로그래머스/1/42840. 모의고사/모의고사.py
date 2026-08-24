@@ -1,25 +1,21 @@
 def solution(answers):
-    a = [1, 2, 3, 4, 5]
-    b = [2, 1, 2, 3, 2, 4, 2, 5]
-    c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-
-    score = [0, 0, 0]
-
+    answer = []
+    one = [1,2,3,4,5]
+    two = [2,1,2,3,2,4,2,5]
+    three =[3,3,1,1,2,2,4,4,5,5]
+    
+    score = [0,0,0]
+    
     for i in range(len(answers)):
-        if answers[i] == a[i % 5]:
+        if answers[i] == one[i%len(one)]:
             score[0] += 1
-
-        if answers[i] == b[i % 8]:
+        if answers[i] == two[i%len(two)]:
             score[1] += 1
-
-        if answers[i] == c[i % 10]:
+        if answers[i] == three[i%len(three)]:
             score[2] += 1
-
-    result = []
-    max_score = max(score)
-
-    for i in range(3):
-        if score[i] == max_score:
-            result.append(i + 1)
-
-    return result
+    
+    for i in range(len(score)):
+        if score[i] == max(score):
+            answer.append(i+1)
+    
+    return answer

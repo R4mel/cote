@@ -3,9 +3,8 @@ def solution(food):
     for i in range(1, len(food)):
         for j in range(food[i] // 2):
             res.append(str(i))    
+    tmp = ''.join(res[::-1])
     res.append('0')
-    for i in range(len(food) - 1, -1, -1):
-        for j in range(food[i] // 2):
-            res.append(str(i))
+    res.append(tmp)
     return ''.join(res)
     

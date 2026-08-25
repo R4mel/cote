@@ -1,4 +1,2 @@
 def solution(s):
-    res = list(s)
-    res.sort(reverse = True)
-    return ''.join(res)
+    return ''.join(sorted(s, reverse=True))

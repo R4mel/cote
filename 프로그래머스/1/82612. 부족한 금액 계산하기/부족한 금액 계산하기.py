@@ -1,8 +1,8 @@
 def solution(price, money, count):
-    ll = []
+    pay = 0
     for i in range(count):
-        ll.append(price + i * price)
-    if sum(ll) > money:
-        return sum(ll) - money
+        pay += (price + i * price)
+    if pay > money:
+        return pay - money
     else:
         return 0

@@ -1,12 +1,7 @@
-def solution(t, pp):
-    arr = []
-    p = len(pp)
-    for i in range(len(t) - p + 1):
-        arr.append(t[i: i + p])
+def solution(t, p):
+    answer = 0
+    for i in range(len(t)-len(p)+1):
+        if int(t[i:i+len(p)]) <= int(p):
+            answer += 1
     
-    count = 0
-    res = map(int, arr)
-    for r in res:
-        if int(pp) >= r:
-            count += 1
-    return count
+    return answer

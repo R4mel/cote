@@ -1,14 +1,12 @@
 def solution(s):
-    res = []
-    index = 0
-    for i in range(len(s)):
-        if s[i] == ' ':
-            res.append(s[i])
-            index = 0
-        elif index % 2 == 0:
-            res.append(s[i].upper())
-            index += 1
-        elif index % 2 == 1:
-            res.append(s[i].lower())
-            index += 1
-    return ''.join(res)
+    answer = []
+    for i in s.split(' '):
+        tmp = ''
+        for j in range(len(i)):
+            if j % 2 ==0:
+                tmp+=i[j].upper()
+            else:
+                tmp+=i[j].lower()
+        answer.append(tmp)
+    
+    return ' '.join(answer)
